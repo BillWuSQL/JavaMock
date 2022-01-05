@@ -13,7 +13,7 @@ public class CurlTest {
     public static void main(String[] args) {
 
         String nacosMetaProt = "http://";
-        String nacosMetaHttpProt = "put";
+        String nacosMetaHttpProt = "PUT";
         String nacosMetaUrl = "/nacos/v1/ns/instance/metadata/batch";
         nacosMetaUrl = nacosMetaProt + "10.18.225.114:8848" + nacosMetaUrl;
 
@@ -39,7 +39,7 @@ public class CurlTest {
         metaDataOne.put("preserved.ip.delete.timeout", "500");
         variables.put("metadata", metaDataOne.toJSONString());
 
-        System.out.println("nacosDown rest , nacosMetaUrl:{} , variables: {} == " +  nacosMetaUrl + "==" + asUrlVariables(variables));
+        System.out.println("nacosDown rest , nacosMetaUrl:{} , variables: {} ==  " +  nacosMetaUrl + "  ==  " + asUrlVariables(variables));
 
         String result = RestUtil(nacosMetaUrl, variables, nacosMetaHttpProt);
         System.out.println("result : " + result);
